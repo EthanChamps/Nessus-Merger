@@ -1,0 +1,3313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NessusClientData_v2>
+<Policy>
+  <policyName>Test Policy</policyName>
+  <Preferences>
+    <ServerPreferences>
+      <preference><name>max_hosts</name><value>30</value></preference>
+    </ServerPreferences>
+  </Preferences>
+</Policy>
+<Report name="Test Scan 8" xmlns:cm="http://www.nessus.org/cm">
+<ReportHost name="10.0.5.35">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.35</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.36">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.36</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.37">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.37</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.38">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.38</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.39">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.39</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.40">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.40</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.41">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.41</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.42">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.42</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.43">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.43</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.44">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.44</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.45">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.45</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.46">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.46</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.47">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.47</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.48">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.48</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.49">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.49</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.50">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.50</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.51">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.51</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.52">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.52</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.53">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.53</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.54">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.54</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.55">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.55</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.56">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.56</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.57">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.57</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.58">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.58</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.59">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.59</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.60">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.60</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.61">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.61</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.62">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.62</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.63">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.63</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.64">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.64</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.65">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.65</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.66">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.66</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.67">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.67</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.68">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.68</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.69">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.69</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.70">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.70</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.71">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.71</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.72">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.72</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.73">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.73</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.74">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.74</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.75">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.75</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.76">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.76</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.77">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.77</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.78">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.78</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.79">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.79</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.80">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.80</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.81">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.81</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.82">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.82</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.83">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.83</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.84">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.84</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.85">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.85</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.86">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.86</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.87">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.87</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.88">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.88</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.89">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.89</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.90">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.90</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.91">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.91</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.92">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.92</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.93">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.93</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.94">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.94</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.95">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.95</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.96">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.96</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.97">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.97</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.98">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.98</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.99">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.99</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.100">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.100</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.101">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.101</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.102">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.102</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.103">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.103</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.104">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.104</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.105">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.105</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.106">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.106</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.107">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.107</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.108">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.108</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.109">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.109</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.110">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.110</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.111">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.111</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.112">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.112</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.113">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.113</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.114">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.114</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.115">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.115</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.116">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.116</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.117">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.117</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.118">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.118</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.119">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.119</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.120">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.120</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.121">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.121</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.122">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.122</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.123">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.123</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.124">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.124</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.125">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.125</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.126">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.126</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.127">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.127</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.128">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.128</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.129">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.129</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.130">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.130</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.131">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.131</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.132">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.132</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.133">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.133</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.134">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.134</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.135">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.135</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.136">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.136</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.137">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.137</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.138">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.138</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.139">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.139</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.140">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.140</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.141">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.141</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.142">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.142</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.143">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.143</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.144">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.144</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.145">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.145</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.146">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.146</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.147">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.147</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.148">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.148</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.149">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.149</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.150">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.150</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.151">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.151</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.152">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.152</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.153">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.153</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.154">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.154</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.155">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.155</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.156">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.156</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.157">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.157</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.158">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.158</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.159">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.159</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.160">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.160</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.161">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.161</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.162">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.162</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.163">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.163</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.164">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.164</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.165">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.165</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.166">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.166</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.167">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.167</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.168">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.168</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.169">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.169</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.170">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.170</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.171">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.171</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.172">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.172</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.173">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.173</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.174">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.174</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.175">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.175</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.176">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.176</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.177">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.177</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.178">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.178</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.179">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.179</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.180">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.180</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.181">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.181</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.182">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.182</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.183">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.183</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+<ReportHost name="10.0.5.184">
+  <HostProperties>
+    <tag name="host-ip">10.0.5.184</tag>
+    <tag name="HOST_START">Mon Jan  1 00:00:00 2024</tag>
+    <tag name="HOST_END">Mon Jan  1 01:00:00 2024</tag>
+    <tag name="operating-system">Linux Kernel 5.15</tag>
+  </HostProperties>
+  <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
+    <description>Information about this scan.</description>
+    <plugin_output>Nessus version : 10.5.0</plugin_output>
+  </ReportItem>
+  <ReportItem port="22" svc_name="ssh" protocol="tcp" severity="2" pluginID="10881" pluginName="SSH Protocol Versions Supported" pluginFamily="General">
+    <description>SSH protocol version 2 is supported.</description>
+    <solution>n/a</solution>
+    <risk_factor>Medium</risk_factor>
+  </ReportItem>
+  <ReportItem port="443" svc_name="www" protocol="tcp" severity="1" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+    <description>SSL certificate details.</description>
+    <solution>n/a</solution>
+    <risk_factor>Low</risk_factor>
+  </ReportItem>
+</ReportHost>
+</Report>
+</NessusClientData_v2>
