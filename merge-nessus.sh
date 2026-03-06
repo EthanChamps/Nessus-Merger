@@ -136,33 +136,28 @@ def process_file_lxml(filepath):
     local_added = 0
     local_skipped = 0
 
+    from copy import deepcopy
     context = etree.iterparse(filepath, events=("end",), tag="ReportHost")
     for event, elem in context:
         host_name = elem.get("name", "")
 
         if deduplicate and host_name in seen_hosts:
             local_skipped += 1
-            elem.clear()
-            # Also clear preceding siblings to free memory
-            while elem.getprevious() is not None:
-                del elem.getparent()[0]
-            continue
+        else:
+            if host_name:
+                seen_hosts.add(host_name)
 
-        if host_name:
-            seen_hosts.add(host_name)
+            # Deep copy before clearing source element for memory management
+            out_report.append(deepcopy(elem))
+            local_added += 1
 
-        # Deep copy and append to output
-        out_report.append(elem)
+            if local_added % 200 == 0:
+                print(f"  ... {local_added} hosts processed", flush=True)
 
-        local_added += 1
-        if local_added % 200 == 0:
-            print(f"  ... {local_added} hosts processed", flush=True)
-
-        # Clear preceding siblings to free memory during iteration
+        # Free memory from source tree: clear element and remove preceding siblings
+        elem.clear()
         while elem.getprevious() is not None:
-            parent = elem.getparent()
-            if parent is not None and len(parent) > 1:
-                del parent[0]
+            del elem.getparent()[0]
 
     total_hosts += local_added
     skipped_hosts += local_skipped
