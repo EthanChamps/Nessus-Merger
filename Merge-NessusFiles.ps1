@@ -45,7 +45,7 @@ Param(
     [string]$OutputFile = "merged_nessus_report.nessus",
 
     [Alias("reportname")]
-    [string]$ReportName = "Merged Report",
+    [string]$Name = "Merged Report",
 
     [switch]$Deduplicate
 )
@@ -113,7 +113,7 @@ if ($policyNode) {
 
 # Start the Report element
 $writer.WriteStartElement("Report")
-$writer.WriteAttributeString("name", $ReportName)
+$writer.WriteAttributeString("name", $Name)
 foreach ($key in $reportAttrs.Keys) {
     $writer.WriteAttributeString($key, $reportAttrs[$key])
 }
