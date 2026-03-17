@@ -60,6 +60,101 @@ Before starting the review, confirm you have:
 
 ## Connection & Initial Enumeration
 
+### Verifying Connection Details via SSMS
+
+Before connecting from the command line or assessment tools, use SQL Server Management Studio (SSMS) to confirm and gather the exact connection parameters.
+
+**Step 1 — Identify the server and instance name:**
+
+- Open SSMS and look at the **Object Explorer** panel (left side)
+- The top-level node displays the connection in the format: `SERVERNAME\INSTANCENAME (SQL Server XX.X - DOMAIN\user)`
+- Use this exact `SERVERNAME\INSTANCENAME` value in your connection strings
+
+| What You See | What It Means |
+|---|---|
+| `DBSRV01\SQLPROD (SQL Server 16.x ...)` | Named instance `SQLPROD` on host `DBSRV01` — connect using `DBSRV01\SQLPROD` |
+| `DBSRV01 (SQL Server 16.x ...)` | Default instance — connect using just `DBSRV01` (no instance name needed) |
+| Connection fails / timeout | Server unreachable — check network path, firewall rules (TCP 1433), and that the SQL Server service is running |
+| `Login failed for user ...` | Server is reachable but credentials are wrong, the account is disabled, or the authentication mode does not allow your login type |
+
+**Step 2 — Find the listening port and IP:**
+
+Run the following query in SSMS once connected:
+
+```sql
+-- Active listener addresses and ports
+SELECT DISTINCT
+    local_net_address AS [ListeningIP],
+    local_tcp_port AS [ListeningPort]
+FROM sys.dm_exec_connections
+WHERE local_net_address IS NOT NULL;
+```
+
+| Result | What It Means | If Not As Expected |
+|---|---|---|
+| Port `1433` | Default SQL Server port — standard configuration | If blank or different, the instance uses a non-default port. You must specify the port explicitly in connection strings (e.g., `SERVER,PORT`) |
+| Port is a high/random number (e.g., `49152`) | Dynamic port assigned by SQL Server — common with named instances | Requires SQL Browser service (UDP 1434) to resolve, or use the port directly. If SQL Browser is stopped, remote clients cannot discover the port automatically |
+| `local_net_address` shows `127.0.0.1` only | SQL Server is only listening on localhost | Remote connections are not possible. TCP/IP must be enabled on the correct IP in SQL Server Configuration Manager |
+| Query returns no rows | TCP/IP protocol may be disabled entirely | Enable TCP/IP in SQL Server Configuration Manager → SQL Server Network Configuration → Protocols |
+
+**Step 3 — Confirm server identity and instance details:**
+
+```sql
+SELECT
+    SERVERPROPERTY('MachineName') AS [MachineName],
+    SERVERPROPERTY('ServerName') AS [ServerName],
+    SERVERPROPERTY('InstanceName') AS [InstanceName],
+    SERVERPROPERTY('IsIntegratedSecurityOnly') AS [WindowsAuthOnly];
+```
+
+| Property | Expected | If Not As Expected |
+|---|---|---|
+| `MachineName` | Matches the hostname you were given in scope | If different, you may be connected to the wrong server — verify with the DBA team before proceeding |
+| `ServerName` | `HOSTNAME\INSTANCE` or just `HOSTNAME` for defaults | Mismatch indicates a renamed server or alias — document this for your records |
+| `InstanceName` | Matches the scoped instance name, or `NULL` for default | `NULL` = default instance. If you expected a named instance but see `NULL`, you are on the wrong instance |
+| `WindowsAuthOnly` | `1` = Windows Auth only (more secure) | `0` = Mixed Mode (SQL + Windows auth). This is a finding — Mixed Mode increases attack surface. Document it and check for weak SQL login passwords |
+
+**Step 4 — Check authentication mode in SSMS GUI:**
+
+- Right-click the server in Object Explorer → **Properties** → **Security** page
+- Under "Server authentication" you will see either:
+  - **Windows Authentication mode** — only domain/Windows accounts can connect
+  - **SQL Server and Windows Authentication mode** (Mixed Mode) — both SQL logins and Windows accounts can connect
+
+| Setting | What It Means | If Not As Expected |
+|---|---|---|
+| Windows Authentication mode | More secure — authentication is delegated to Active Directory | This is the recommended configuration. If the engagement requires SQL Authentication, Mixed Mode must be enabled |
+| Mixed Mode | SQL logins with passwords stored in SQL Server are permitted | Increases risk — SQL logins are vulnerable to brute-force attacks and may have weak/blank passwords. Flag as a finding if not business-justified |
+
+**Step 5 — Verify TCP/IP is enabled (if connections fail):**
+
+If you cannot connect remotely, check in **SQL Server Configuration Manager**:
+
+1. Navigate to **SQL Server Network Configuration** → **Protocols for [INSTANCE]**
+2. Verify **TCP/IP** is **Enabled**
+3. Right-click TCP/IP → **Properties** → **IP Addresses** tab → check the port under **IPAll**
+
+| Configuration | What It Means | If Not As Expected |
+|---|---|---|
+| TCP/IP = Enabled | Remote TCP connections are accepted | If Disabled, only local shared memory and named pipe connections work. Ask the DBA to enable TCP/IP and restart the SQL service |
+| TCP Dynamic Ports = (blank), TCP Port = `1433` | Static port — predictable and standard | If Dynamic Ports has a value and TCP Port is blank, the instance uses a random port on each restart. SQL Browser (UDP 1434) must be running for clients to discover it |
+| TCP Dynamic Ports = `0` | SQL Server will pick a dynamic port at startup | Same as above — note the actual port from `sys.dm_exec_connections` and use it directly if SQL Browser is unavailable |
+
+**Step 6 — SQL Browser service (named instances):**
+
+Named instances require the SQL Server Browser service to advertise their port on UDP 1434.
+
+```powershell
+# Check SQL Browser status (run on the server or via remote PowerShell)
+Get-Service SQLBrowser | Select-Object Name, Status, StartType
+```
+
+| Status | What It Means | If Not As Expected |
+|---|---|---|
+| Running | Named instances can be discovered by clients automatically | Expected for environments with named instances |
+| Stopped | Clients cannot resolve named instances to ports automatically | You must specify the port explicitly in your connection string (e.g., `SERVER,49152`). This is sometimes intentional as a hardening measure to reduce information disclosure |
+| Disabled | Intentionally turned off — common hardening practice | Same as Stopped — use explicit ports. Document whether this was intentional |
+
 ### Connect via sqlcmd
 
 ```bash
