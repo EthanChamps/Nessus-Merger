@@ -1,0 +1,1256 @@
+# MS SQL Server 2022 Compliance Review Guide
+
+**Purpose:** Generic security compliance review guide for MS SQL Server 2022 database assessments.
+**Scope:** Two-day hands-on review covering authentication, authorization, auditing, encryption, configuration hardening, and patching.
+**Audience:** Penetration testers and security auditors performing authorized database assessments.
+
+---
+
+## Table of Contents
+
+1. [Day 1 - Discovery, Authentication & Authorization](#day-1---discovery-authentication--authorization)
+2. [Day 2 - Auditing, Encryption, Hardening & Reporting](#day-2---auditing-encryption-hardening--reporting)
+3. [Pre-Engagement Checklist](#pre-engagement-checklist)
+4. [Connection & Initial Enumeration](#connection--initial-enumeration)
+5. [Instance Configuration Review](#instance-configuration-review)
+6. [Authentication & Password Policy](#authentication--password-policy)
+7. [Authorization & Privileges](#authorization--privileges)
+8. [Auditing & Logging](#auditing--logging)
+9. [Encryption Review](#encryption-review)
+10. [Network & Surface Area](#network--surface-area)
+11. [Patching & Versioning](#patching--versioning)
+12. [Backup & Recovery Security](#backup--recovery-security)
+13. [Stored Procedures & Code Review](#stored-procedures--code-review)
+14. [CIS Benchmark Quick Checks](#cis-benchmark-quick-checks)
+15. [Findings Template](#findings-template)
+16. [References](#references)
+
+---
+
+## Pre-Engagement Checklist
+
+Before starting the review, confirm you have:
+
+- [ ] Written authorization / Rules of Engagement signed
+- [ ] Scope defined — server names, instances, databases
+- [ ] Credentials provided (sysadmin-level read access recommended for audit)
+- [ ] Network access confirmed (TCP 1433 or named instance ports)
+- [ ] Backup/rollback plan agreed with DBA team
+- [ ] Out-of-scope systems documented
+- [ ] Emergency contact for the DBA team
+- [ ] Tools installed: SSMS, sqlcmd, or Azure Data Studio
+
+---
+
+## Day 1 - Discovery, Authentication & Authorization
+
+| Time Block | Activity |
+|---|---|
+| Morning (4h) | Connection, enumeration, instance config, version/patch review |
+| Afternoon (4h) | Authentication review, password policy, authorization & privilege audit |
+
+## Day 2 - Auditing, Encryption, Hardening & Reporting
+
+| Time Block | Activity |
+|---|---|
+| Morning (4h) | Auditing/logging, encryption, network/surface area, backup security |
+| Afternoon (4h) | Stored procedure review, CIS benchmark checks, findings write-up |
+
+---
+
+## Connection & Initial Enumeration
+
+### Connect via sqlcmd
+
+```bash
+# Windows Authentication
+sqlcmd -S <ServerName>\<InstanceName> -E
+
+# SQL Authentication
+sqlcmd -S <ServerName>\<InstanceName> -U <username> -P <password>
+
+# Specific database
+sqlcmd -S <ServerName>,<Port> -U <username> -P <password> -d <DatabaseName>
+```
+
+### Server Version & Edition
+
+```sql
+-- Full version string
+SELECT @@VERSION;
+
+-- Structured version info
+SELECT
+    SERVERPROPERTY('MachineName') AS [MachineName],
+    SERVERPROPERTY('ServerName') AS [ServerName],
+    SERVERPROPERTY('InstanceName') AS [InstanceName],
+    SERVERPROPERTY('ProductVersion') AS [ProductVersion],
+    SERVERPROPERTY('ProductLevel') AS [ProductLevel],
+    SERVERPROPERTY('ProductUpdateLevel') AS [UpdateLevel],
+    SERVERPROPERTY('ProductUpdateReference') AS [KBArticle],
+    SERVERPROPERTY('Edition') AS [Edition],
+    SERVERPROPERTY('IsIntegratedSecurityOnly') AS [WindowsAuthOnly],
+    SERVERPROPERTY('IsClustered') AS [IsClustered],
+    SERVERPROPERTY('IsHadrEnabled') AS [AlwaysOnEnabled],
+    SERVERPROPERTY('BuildClrVersion') AS [CLRVersion];
+```
+
+### List All Databases
+
+```sql
+SELECT
+    name,
+    database_id,
+    state_desc,
+    recovery_model_desc,
+    compatibility_level,
+    is_encrypted,
+    is_trustworthy_on,
+    is_db_chaining_on,
+    create_date
+FROM sys.databases
+ORDER BY name;
+```
+
+### List All Instances (from OS if accessible)
+
+```sql
+-- Check for multiple instances via registry (requires xp_regread access)
+EXEC xp_regread
+    N'HKEY_LOCAL_MACHINE',
+    N'SOFTWARE\Microsoft\Microsoft SQL Server',
+    N'InstalledInstances';
+```
+
+---
+
+## Instance Configuration Review
+
+### Show All Configuration Options
+
+```sql
+-- All server-level settings
+SELECT
+    name,
+    value,
+    value_in_use,
+    minimum,
+    maximum,
+    description,
+    is_dynamic,
+    is_advanced
+FROM sys.configurations
+ORDER BY name;
+```
+
+### Critical Settings to Check
+
+```sql
+-- Enable advanced options to view all
+EXEC sp_configure 'show advanced options', 1;
+RECONFIGURE;
+
+-- Check critical settings individually
+SELECT name, value_in_use
+FROM sys.configurations
+WHERE name IN (
+    'clr enabled',
+    'clr strict security',
+    'cross db ownership chaining',
+    'Database Mail XPs',
+    'Ole Automation Procedures',
+    'remote access',
+    'remote admin connections',
+    'scan for startup procs',
+    'xp_cmdshell',
+    'Ad Hoc Distributed Queries',
+    'contained database authentication',
+    'default trace enabled',
+    'external scripts enabled',
+    'remote data archive',
+    'allow polybase export',
+    'hadoop connectivity'
+);
+```
+
+**Expected secure values:**
+
+| Setting | Secure Value | Notes |
+|---|---|---|
+| `xp_cmdshell` | 0 | OS command execution — must be disabled |
+| `clr enabled` | 0 | Unless explicitly required by application |
+| `clr strict security` | 1 | Enforces SAFE assembly restrictions (SQL 2017+) |
+| `cross db ownership chaining` | 0 | Prevents cross-database privilege escalation |
+| `Database Mail XPs` | 0 | Unless mail functionality is required |
+| `Ole Automation Procedures` | 0 | COM object access — disable |
+| `remote access` | 0 | Legacy remote server feature — disable |
+| `remote admin connections` | 0 | DAC should be local only (except clusters) |
+| `Ad Hoc Distributed Queries` | 0 | Prevents OPENROWSET/OPENDATASOURCE abuse |
+| `scan for startup procs` | 0 | Unless specific startup procs are required |
+| `default trace enabled` | 1 | Should be on for basic auditing |
+| `external scripts enabled` | 0 | R/Python execution — disable unless required |
+| `contained database authentication` | 0 | Unless contained databases are specifically used |
+
+---
+
+## Authentication & Password Policy
+
+### Authentication Mode
+
+```sql
+-- Check authentication mode
+-- 1 = Windows only, 0 = Mixed mode
+SELECT SERVERPROPERTY('IsIntegratedSecurityOnly') AS [WindowsAuthOnly];
+
+-- Also check via registry
+EXEC xp_instance_regread
+    N'HKEY_LOCAL_MACHINE',
+    N'Software\Microsoft\MSSQLServer\MSSQLServer',
+    N'LoginMode';
+-- 1 = Windows Auth only, 2 = Mixed mode
+```
+
+> **Finding:** Mixed mode authentication is less secure. Recommend Windows Authentication only where possible.
+
+### Enumerate All Logins
+
+```sql
+SELECT
+    sp.name AS [Login],
+    sp.type_desc AS [LoginType],
+    sp.is_disabled AS [IsDisabled],
+    sp.create_date,
+    sp.modify_date,
+    sp.default_database_name,
+    sl.is_policy_checked AS [PasswordPolicyEnforced],
+    sl.is_expiration_checked AS [PasswordExpirationEnforced],
+    LOGINPROPERTY(sp.name, 'PasswordLastSetTime') AS [PasswordLastSet],
+    LOGINPROPERTY(sp.name, 'DaysUntilExpiration') AS [DaysUntilExpiration],
+    LOGINPROPERTY(sp.name, 'IsLocked') AS [IsLocked],
+    LOGINPROPERTY(sp.name, 'LockoutTime') AS [LockoutTime],
+    LOGINPROPERTY(sp.name, 'BadPasswordCount') AS [BadPasswordCount],
+    LOGINPROPERTY(sp.name, 'BadPasswordTime') AS [BadPasswordTime]
+FROM sys.server_principals sp
+LEFT JOIN sys.sql_logins sl ON sp.principal_id = sl.principal_id
+WHERE sp.type IN ('S', 'U', 'G', 'C', 'K')
+ORDER BY sp.type_desc, sp.name;
+```
+
+### Check for Blank Passwords
+
+```sql
+-- SQL logins with blank passwords
+SELECT name, type_desc, is_disabled
+FROM sys.sql_logins
+WHERE PWDCOMPARE('', password_hash) = 1;
+```
+
+### Check for Weak/Common Passwords
+
+```sql
+-- Test against common passwords (authorized testing only)
+SELECT name, type_desc, is_disabled
+FROM sys.sql_logins
+WHERE PWDCOMPARE(name, password_hash) = 1  -- password = username
+   OR PWDCOMPARE('password', password_hash) = 1
+   OR PWDCOMPARE('Password1', password_hash) = 1
+   OR PWDCOMPARE('Password123', password_hash) = 1
+   OR PWDCOMPARE('P@ssw0rd', password_hash) = 1
+   OR PWDCOMPARE('sql2022', password_hash) = 1
+   OR PWDCOMPARE('sa', password_hash) = 1
+   OR PWDCOMPARE('admin', password_hash) = 1
+   OR PWDCOMPARE('changeme', password_hash) = 1
+   OR PWDCOMPARE('Welcome1', password_hash) = 1;
+```
+
+### Password Policy Enforcement
+
+```sql
+-- SQL logins without password policy or expiration
+SELECT
+    name,
+    is_policy_checked AS [PolicyEnforced],
+    is_expiration_checked AS [ExpirationEnforced],
+    is_disabled
+FROM sys.sql_logins
+WHERE is_policy_checked = 0
+   OR is_expiration_checked = 0
+ORDER BY name;
+```
+
+### SA Account Review
+
+```sql
+-- Check SA account status
+SELECT
+    name,
+    is_disabled,
+    LOGINPROPERTY(name, 'PasswordLastSetTime') AS [PasswordLastSet]
+FROM sys.sql_logins
+WHERE sid = 0x01;  -- SA is always SID 0x01
+
+-- Check if SA has been renamed (CIS recommendation)
+SELECT name FROM sys.server_principals WHERE sid = 0x01;
+```
+
+> **Recommendation:** SA account should be disabled and renamed. A separate named admin account should be used.
+
+### Guest Account Status
+
+```sql
+-- Check guest user access in each database
+EXEC sp_MSforeachdb '
+    USE [?];
+    SELECT
+        DB_NAME() AS [Database],
+        dp.name AS [User],
+        dp.type_desc,
+        perm.permission_name,
+        perm.state_desc
+    FROM sys.database_principals dp
+    LEFT JOIN sys.database_permissions perm ON dp.principal_id = perm.grantee_principal_id
+    WHERE dp.name = ''guest''
+    AND perm.permission_name = ''CONNECT''
+    AND perm.state_desc = ''GRANT''
+    AND DB_NAME() NOT IN (''master'', ''tempdb'');
+';
+```
+
+---
+
+## Authorization & Privileges
+
+### Sysadmin Role Members
+
+```sql
+-- All members of sysadmin
+SELECT
+    sp.name AS [Login],
+    sp.type_desc AS [LoginType],
+    sp.is_disabled
+FROM sys.server_principals sp
+INNER JOIN sys.server_role_members srm ON sp.principal_id = srm.member_principal_id
+INNER JOIN sys.server_principals sr ON srm.role_principal_id = sr.principal_id
+WHERE sr.name = 'sysadmin'
+ORDER BY sp.name;
+```
+
+### All Server Role Memberships
+
+```sql
+SELECT
+    sr.name AS [ServerRole],
+    sp.name AS [MemberLogin],
+    sp.type_desc AS [LoginType],
+    sp.is_disabled
+FROM sys.server_role_members srm
+INNER JOIN sys.server_principals sr ON srm.role_principal_id = sr.principal_id
+INNER JOIN sys.server_principals sp ON srm.member_principal_id = sp.principal_id
+ORDER BY sr.name, sp.name;
+```
+
+### Server-Level Permissions
+
+```sql
+SELECT
+    pr.name AS [Principal],
+    pr.type_desc AS [PrincipalType],
+    pe.permission_name,
+    pe.state_desc AS [PermissionState],
+    pe.class_desc
+FROM sys.server_permissions pe
+INNER JOIN sys.server_principals pr ON pe.grantee_principal_id = pr.principal_id
+WHERE pr.name NOT LIKE '##%'
+ORDER BY pr.name, pe.permission_name;
+```
+
+### Database-Level Users & Roles (per database)
+
+```sql
+-- Run against each target database
+USE [YourDatabaseName];
+GO
+
+-- Database users and their roles
+SELECT
+    dp.name AS [DatabaseUser],
+    dp.type_desc AS [UserType],
+    dp.authentication_type_desc,
+    dp.default_schema_name,
+    STRING_AGG(r.name, ', ') AS [DatabaseRoles]
+FROM sys.database_principals dp
+LEFT JOIN sys.database_role_members drm ON dp.principal_id = drm.member_principal_id
+LEFT JOIN sys.database_principals r ON drm.role_principal_id = r.principal_id
+WHERE dp.type IN ('S', 'U', 'G', 'E', 'X')
+    AND dp.name NOT IN ('sys', 'INFORMATION_SCHEMA', 'guest', 'dbo')
+GROUP BY dp.name, dp.type_desc, dp.authentication_type_desc, dp.default_schema_name
+ORDER BY dp.name;
+```
+
+### db_owner Members (per database)
+
+```sql
+USE [YourDatabaseName];
+GO
+
+SELECT
+    dp.name AS [User],
+    dp.type_desc
+FROM sys.database_role_members drm
+INNER JOIN sys.database_principals r ON drm.role_principal_id = r.principal_id
+INNER JOIN sys.database_principals dp ON drm.member_principal_id = dp.principal_id
+WHERE r.name = 'db_owner'
+ORDER BY dp.name;
+```
+
+### Explicit Database Permissions
+
+```sql
+USE [YourDatabaseName];
+GO
+
+SELECT
+    pr.name AS [Principal],
+    pr.type_desc AS [PrincipalType],
+    pe.permission_name,
+    pe.state_desc AS [PermState],
+    pe.class_desc,
+    OBJECT_NAME(pe.major_id) AS [ObjectName],
+    SCHEMA_NAME(o.schema_id) AS [SchemaName]
+FROM sys.database_permissions pe
+INNER JOIN sys.database_principals pr ON pe.grantee_principal_id = pr.principal_id
+LEFT JOIN sys.objects o ON pe.major_id = o.object_id
+WHERE pr.name NOT IN ('public', 'guest', 'dbo', 'sys', 'INFORMATION_SCHEMA')
+    AND pr.name NOT LIKE '##%'
+ORDER BY pr.name, pe.permission_name;
+```
+
+### EXECUTE AS / Impersonation Permissions
+
+```sql
+-- Server-level impersonation
+SELECT
+    pr.name AS [Grantor],
+    pe.permission_name,
+    pe.state_desc,
+    pr2.name AS [CanImpersonate]
+FROM sys.server_permissions pe
+INNER JOIN sys.server_principals pr ON pe.grantee_principal_id = pr.principal_id
+INNER JOIN sys.server_principals pr2 ON pe.major_id = pr2.principal_id
+WHERE pe.permission_name = 'IMPERSONATE'
+ORDER BY pr.name;
+```
+
+```sql
+-- Database-level impersonation
+USE [YourDatabaseName];
+GO
+
+SELECT
+    dp.name AS [Grantee],
+    pe.permission_name,
+    pe.state_desc,
+    dp2.name AS [CanImpersonate]
+FROM sys.database_permissions pe
+INNER JOIN sys.database_principals dp ON pe.grantee_principal_id = dp.principal_id
+INNER JOIN sys.database_principals dp2 ON pe.major_id = dp2.principal_id
+WHERE pe.permission_name = 'IMPERSONATE';
+```
+
+### Orphaned Users
+
+```sql
+USE [YourDatabaseName];
+GO
+
+SELECT
+    dp.name AS [OrphanedUser],
+    dp.type_desc,
+    dp.create_date
+FROM sys.database_principals dp
+LEFT JOIN sys.server_principals sp ON dp.sid = sp.sid
+WHERE dp.type IN ('S', 'U')
+    AND sp.sid IS NULL
+    AND dp.name NOT IN ('dbo', 'guest', 'INFORMATION_SCHEMA', 'sys')
+    AND dp.authentication_type != 0;
+```
+
+---
+
+## Auditing & Logging
+
+### SQL Server Audit Status
+
+```sql
+-- Server audits
+SELECT
+    a.name AS [AuditName],
+    a.status_desc,
+    a.type_desc AS [AuditDestination],
+    a.audit_file_path,
+    a.max_file_size,
+    a.max_rollover_files,
+    a.is_state_enabled
+FROM sys.server_audits a;
+```
+
+### Audit Specifications
+
+```sql
+-- Server audit specifications
+SELECT
+    sa.name AS [AuditName],
+    sas.name AS [SpecificationName],
+    sas.is_state_enabled,
+    sasd.audit_action_name,
+    sasd.class_desc,
+    sasd.audited_principal_name,
+    sasd.audited_result
+FROM sys.server_audit_specification_details sasd
+INNER JOIN sys.server_audit_specifications sas ON sasd.server_specification_id = sas.server_specification_id
+INNER JOIN sys.server_audits sa ON sas.audit_guid = sa.audit_guid;
+
+-- Database audit specifications
+USE [YourDatabaseName];
+GO
+
+SELECT
+    sa.name AS [AuditName],
+    das.name AS [SpecificationName],
+    das.is_state_enabled,
+    dasd.audit_action_name,
+    dasd.class_desc,
+    dasd.audited_principal_name,
+    dasd.audited_result
+FROM sys.database_audit_specification_details dasd
+INNER JOIN sys.database_audit_specifications das ON dasd.database_specification_id = das.database_specification_id
+INNER JOIN sys.server_audits sa ON das.audit_guid = sa.audit_guid;
+```
+
+### Default Trace Check
+
+```sql
+-- Verify default trace is enabled
+SELECT name, value_in_use
+FROM sys.configurations
+WHERE name = 'default trace enabled';
+
+-- Check trace file location
+SELECT path FROM sys.traces WHERE is_default = 1;
+```
+
+### Error Log Configuration
+
+```sql
+-- Number of error logs retained
+EXEC xp_instance_regread
+    N'HKEY_LOCAL_MACHINE',
+    N'Software\Microsoft\MSSQLServer\MSSQLServer',
+    N'NumErrorLogs';
+-- Recommendation: at least 12
+
+-- View recent error log entries
+EXEC sp_readerrorlog 0, 1, N'Login failed';
+```
+
+### Login Auditing Level
+
+```sql
+EXEC xp_instance_regread
+    N'HKEY_LOCAL_MACHINE',
+    N'Software\Microsoft\MSSQLServer\MSSQLServer',
+    N'AuditLevel';
+-- 0 = None, 1 = Success only, 2 = Failure only, 3 = Both
+-- Recommendation: 3 (Both)
+```
+
+### C2 Audit Mode (legacy, informational)
+
+```sql
+SELECT name, value_in_use
+FROM sys.configurations
+WHERE name = 'common criteria compliance enabled';
+-- 1 = enabled (provides additional auditing per Common Criteria)
+```
+
+---
+
+## Encryption Review
+
+### Transparent Data Encryption (TDE)
+
+```sql
+-- TDE status for all databases
+SELECT
+    db.name AS [Database],
+    db.is_encrypted,
+    dek.encryption_state,
+    CASE dek.encryption_state
+        WHEN 0 THEN 'No encryption key'
+        WHEN 1 THEN 'Unencrypted'
+        WHEN 2 THEN 'Encryption in progress'
+        WHEN 3 THEN 'Encrypted'
+        WHEN 4 THEN 'Key change in progress'
+        WHEN 5 THEN 'Decryption in progress'
+        WHEN 6 THEN 'Protection change in progress'
+    END AS [EncryptionStateDesc],
+    dek.key_algorithm,
+    dek.key_length,
+    dek.encryptor_type,
+    cert.name AS [CertificateName],
+    cert.expiry_date AS [CertExpiry]
+FROM sys.databases db
+LEFT JOIN sys.dm_database_encryption_keys dek ON db.database_id = dek.database_id
+LEFT JOIN sys.certificates cert ON dek.encryptor_thumbprint = cert.thumbprint
+ORDER BY db.name;
+```
+
+### TDE Certificate Backup Check
+
+```sql
+-- List TDE certificates — confirm these are backed up securely
+SELECT
+    name,
+    subject,
+    start_date,
+    expiry_date,
+    thumbprint,
+    pvt_key_encryption_type_desc
+FROM sys.certificates
+WHERE name LIKE '%TDE%'
+   OR thumbprint IN (SELECT encryptor_thumbprint FROM sys.dm_database_encryption_keys);
+```
+
+### Always Encrypted Configuration
+
+```sql
+USE [YourDatabaseName];
+GO
+
+-- Column master keys
+SELECT
+    name AS [ColumnMasterKey],
+    key_store_provider_name,
+    key_path,
+    create_date
+FROM sys.column_master_keys;
+
+-- Column encryption keys
+SELECT
+    cek.name AS [ColumnEncryptionKey],
+    cek.create_date,
+    cmk.name AS [MasterKeyName]
+FROM sys.column_encryption_keys cek
+INNER JOIN sys.column_encryption_key_values cekv ON cek.column_encryption_key_id = cekv.column_encryption_key_id
+INNER JOIN sys.column_master_keys cmk ON cekv.column_master_key_id = cmk.column_master_key_id;
+
+-- Encrypted columns
+SELECT
+    t.name AS [Table],
+    c.name AS [Column],
+    c.encryption_type_desc,
+    cek.name AS [EncryptionKeyName]
+FROM sys.columns c
+INNER JOIN sys.tables t ON c.object_id = t.object_id
+INNER JOIN sys.column_encryption_keys cek ON c.column_encryption_key_id = cek.column_encryption_key_id
+WHERE c.encryption_type IS NOT NULL;
+```
+
+### Connection Encryption (TLS/SSL)
+
+```sql
+-- Check if connections are encrypted
+SELECT
+    session_id,
+    encrypt_option,
+    auth_scheme,
+    client_net_address,
+    protocol_type
+FROM sys.dm_exec_connections
+WHERE session_id = @@SPID;
+
+-- Check Force Encryption setting
+EXEC xp_instance_regread
+    N'HKEY_LOCAL_MACHINE',
+    N'SOFTWARE\Microsoft\Microsoft SQL Server\MSSQLServer\SuperSocketNetLib',
+    N'ForceEncryption';
+-- 1 = Forced, 0 = Not forced
+```
+
+### TLS Version Check
+
+```sql
+-- Check TLS version of current connection
+SELECT
+    session_id,
+    encrypt_option,
+    protocol_type,
+    protocol_version
+FROM sys.dm_exec_connections
+WHERE session_id = @@SPID;
+
+-- For full TLS configuration, check registry or OS-level settings
+-- SQL Server 2022 supports TLS 1.3
+```
+
+### Service Master Key & Database Master Keys
+
+```sql
+-- Service master key info
+SELECT *
+FROM sys.symmetric_keys
+WHERE name = '##MS_ServiceMasterKey##';
+
+-- Database master keys across databases
+EXEC sp_MSforeachdb '
+    USE [?];
+    IF EXISTS (SELECT 1 FROM sys.symmetric_keys WHERE name = ''##MS_DatabaseMasterKey##'')
+    SELECT DB_NAME() AS [Database], name, algorithm_desc, create_date, modify_date
+    FROM sys.symmetric_keys
+    WHERE name = ''##MS_DatabaseMasterKey##'';
+';
+```
+
+---
+
+## Network & Surface Area
+
+### Listening Ports & Protocols
+
+```sql
+-- SQL Server network configuration
+SELECT
+    local_net_address,
+    local_tcp_port,
+    COUNT(*) AS [Connections]
+FROM sys.dm_exec_connections
+WHERE local_net_address IS NOT NULL
+GROUP BY local_net_address, local_tcp_port;
+```
+
+### Linked Servers
+
+```sql
+-- Enumerate linked servers
+SELECT
+    ss.name AS [LinkedServer],
+    ss.product,
+    ss.provider,
+    ss.data_source,
+    ss.catalog,
+    ss.is_remote_login_enabled,
+    ss.is_rpc_out_enabled,
+    ss.is_data_access_enabled,
+    ll.remote_name AS [MappedRemoteLogin],
+    ll.uses_self_credential
+FROM sys.servers ss
+LEFT JOIN sys.linked_logins ll ON ss.server_id = ll.server_id
+WHERE ss.is_linked = 1
+ORDER BY ss.name;
+```
+
+> **Risk:** Linked servers with `is_rpc_out_enabled = 1` can execute remote procedures. Review mapped credentials — avoid SA or high-privilege mappings.
+
+### Endpoints
+
+```sql
+SELECT
+    name,
+    type_desc,
+    state_desc,
+    protocol_desc,
+    port,
+    ip_address,
+    is_admin_endpoint
+FROM sys.endpoints
+WHERE type_desc != 'TSQL'
+ORDER BY name;
+```
+
+### SQL Browser Service
+
+```sql
+-- If accessible, check if SQL Browser is running
+-- This exposes instance names and ports on UDP 1434
+-- Verify via OS: Get-Service SQLBrowser (PowerShell)
+```
+
+### Remote Access & DAC
+
+```sql
+SELECT name, value_in_use
+FROM sys.configurations
+WHERE name IN ('remote access', 'remote admin connections');
+-- remote access should be 0
+-- remote admin connections should be 0 (unless clustered)
+```
+
+---
+
+## Patching & Versioning
+
+### Current Patch Level
+
+```sql
+SELECT
+    SERVERPROPERTY('ProductVersion') AS [Version],
+    SERVERPROPERTY('ProductLevel') AS [Level],
+    SERVERPROPERTY('ProductUpdateLevel') AS [CU],
+    SERVERPROPERTY('ProductUpdateReference') AS [KB];
+```
+
+### Cross-Reference with Microsoft
+
+Compare the output above against the latest SQL Server 2022 build list:
+- Check the KB number against Microsoft's official SQL Server 2022 build versions page
+- Verify the Cumulative Update is within the last two releases
+- Note any known CVEs for the running version
+
+### Version Compliance Table
+
+| Component | Check |
+|---|---|
+| SQL Server version | Is it 2022 (16.x)? |
+| Service Pack / CU | Latest or N-1 Cumulative Update? |
+| OS patches | Is the host OS patched? |
+| .NET Framework | Current version on host? |
+| SSMS version | If installed, is it current? |
+
+---
+
+## Backup & Recovery Security
+
+### Backup History & Encryption
+
+```sql
+-- Recent backup history
+SELECT
+    bs.database_name,
+    bs.type AS [BackupType],
+    CASE bs.type
+        WHEN 'D' THEN 'Full'
+        WHEN 'I' THEN 'Differential'
+        WHEN 'L' THEN 'Log'
+    END AS [BackupTypeDesc],
+    bs.backup_start_date,
+    bs.backup_finish_date,
+    bs.is_copy_only,
+    bs.is_encrypted,
+    bs.key_algorithm,
+    bmf.physical_device_name AS [BackupLocation]
+FROM msdb.dbo.backupset bs
+INNER JOIN msdb.dbo.backupmediafamily bmf ON bs.media_set_id = bmf.media_set_id
+WHERE bs.backup_start_date > DATEADD(DAY, -30, GETDATE())
+ORDER BY bs.database_name, bs.backup_start_date DESC;
+```
+
+### Databases Without Recent Backups
+
+```sql
+SELECT
+    d.name AS [Database],
+    d.recovery_model_desc,
+    MAX(bs.backup_finish_date) AS [LastBackup],
+    DATEDIFF(DAY, MAX(bs.backup_finish_date), GETDATE()) AS [DaysSinceBackup]
+FROM sys.databases d
+LEFT JOIN msdb.dbo.backupset bs ON d.name = bs.database_name
+WHERE d.database_id > 4  -- exclude system DBs
+GROUP BY d.name, d.recovery_model_desc
+HAVING MAX(bs.backup_finish_date) IS NULL
+    OR DATEDIFF(DAY, MAX(bs.backup_finish_date), GETDATE()) > 7
+ORDER BY [DaysSinceBackup] DESC;
+```
+
+### Backup File Permissions
+
+```sql
+-- Check where backups are stored
+SELECT DISTINCT physical_device_name
+FROM msdb.dbo.backupmediafamily
+WHERE physical_device_name NOT LIKE '{%'
+ORDER BY physical_device_name;
+-- Verify NTFS permissions on these locations restrict access to DBAs and backup service accounts only
+```
+
+---
+
+## Stored Procedures & Code Review
+
+### Dangerous Extended Stored Procedures
+
+```sql
+-- Check permissions on dangerous procedures
+SELECT
+    OBJECT_NAME(pe.major_id) AS [Procedure],
+    pr.name AS [Principal],
+    pe.permission_name,
+    pe.state_desc
+FROM sys.database_permissions pe
+INNER JOIN sys.database_principals pr ON pe.grantee_principal_id = pr.principal_id
+WHERE pe.major_id IN (
+    OBJECT_ID('xp_cmdshell'),
+    OBJECT_ID('xp_regread'),
+    OBJECT_ID('xp_regwrite'),
+    OBJECT_ID('xp_regdeletekey'),
+    OBJECT_ID('xp_regdeletevalue'),
+    OBJECT_ID('xp_servicecontrol'),
+    OBJECT_ID('xp_availablemedia'),
+    OBJECT_ID('xp_dirtree'),
+    OBJECT_ID('xp_enumdsn'),
+    OBJECT_ID('xp_loginconfig'),
+    OBJECT_ID('xp_makecab'),
+    OBJECT_ID('xp_subdirs'),
+    OBJECT_ID('sp_OACreate'),
+    OBJECT_ID('sp_OAMethod'),
+    OBJECT_ID('sp_OADestroy')
+)
+AND pe.state_desc = 'GRANT';
+```
+
+### User Stored Procedures with Dynamic SQL
+
+```sql
+USE [YourDatabaseName];
+GO
+
+-- Find procedures using dynamic SQL (potential SQL injection risk)
+SELECT
+    SCHEMA_NAME(o.schema_id) AS [Schema],
+    o.name AS [Procedure],
+    o.create_date,
+    o.modify_date
+FROM sys.sql_modules m
+INNER JOIN sys.objects o ON m.object_id = o.object_id
+WHERE o.type = 'P'
+    AND (m.definition LIKE '%EXEC(%'
+        OR m.definition LIKE '%EXECUTE(%'
+        OR m.definition LIKE '%sp_executesql%'
+        OR m.definition LIKE '%EXEC @%'
+        OR m.definition LIKE '%EXEC (@%')
+ORDER BY o.name;
+```
+
+### Procedures with EXECUTE AS
+
+```sql
+USE [YourDatabaseName];
+GO
+
+SELECT
+    SCHEMA_NAME(o.schema_id) AS [Schema],
+    o.name AS [Procedure],
+    m.execute_as_principal_id,
+    dp.name AS [ExecuteAsUser]
+FROM sys.sql_modules m
+INNER JOIN sys.objects o ON m.object_id = o.object_id
+LEFT JOIN sys.database_principals dp ON m.execute_as_principal_id = dp.principal_id
+WHERE m.execute_as_principal_id IS NOT NULL
+    AND m.execute_as_principal_id != -2  -- -2 = CALLER (default)
+ORDER BY o.name;
+```
+
+### TRUSTWORTHY Database Setting
+
+```sql
+-- TRUSTWORTHY allows database code to access external resources
+-- Should be OFF unless specifically required
+SELECT
+    name,
+    is_trustworthy_on
+FROM sys.databases
+WHERE is_trustworthy_on = 1
+    AND name NOT IN ('msdb');
+```
+
+---
+
+## CIS Benchmark Quick Checks
+
+These checks align with CIS Microsoft SQL Server 2022 Benchmark recommendations.
+
+### CIS Section 2 — Surface Area
+
+```sql
+-- 2.1: Ad Hoc Distributed Queries disabled
+-- 2.2: CLR Enabled disabled
+-- 2.3: Cross DB Ownership Chaining disabled
+-- 2.4: Database Mail XPs disabled
+-- 2.5: Ole Automation Procedures disabled
+-- 2.6: Remote Access disabled
+-- 2.7: Remote Admin Connections disabled
+-- 2.8: Scan For Startup Procs disabled
+-- 2.9: Trustworthy OFF on user databases
+-- 2.11: xp_cmdshell disabled
+-- 2.13: default trace enabled
+-- 2.14: CLR strict security enabled
+-- 2.16: external scripts enabled disabled
+
+-- Consolidated check:
+SELECT
+    name,
+    value_in_use,
+    CASE
+        WHEN name = 'Ad Hoc Distributed Queries' AND value_in_use = 0 THEN 'PASS'
+        WHEN name = 'clr enabled' AND value_in_use = 0 THEN 'PASS'
+        WHEN name = 'clr strict security' AND value_in_use = 1 THEN 'PASS'
+        WHEN name = 'cross db ownership chaining' AND value_in_use = 0 THEN 'PASS'
+        WHEN name = 'Database Mail XPs' AND value_in_use = 0 THEN 'PASS'
+        WHEN name = 'Ole Automation Procedures' AND value_in_use = 0 THEN 'PASS'
+        WHEN name = 'remote access' AND value_in_use = 0 THEN 'PASS'
+        WHEN name = 'remote admin connections' AND value_in_use = 0 THEN 'PASS'
+        WHEN name = 'scan for startup procs' AND value_in_use = 0 THEN 'PASS'
+        WHEN name = 'xp_cmdshell' AND value_in_use = 0 THEN 'PASS'
+        WHEN name = 'default trace enabled' AND value_in_use = 1 THEN 'PASS'
+        WHEN name = 'external scripts enabled' AND value_in_use = 0 THEN 'PASS'
+        ELSE 'FAIL'
+    END AS [CIS_Result]
+FROM sys.configurations
+WHERE name IN (
+    'Ad Hoc Distributed Queries',
+    'clr enabled',
+    'clr strict security',
+    'cross db ownership chaining',
+    'Database Mail XPs',
+    'Ole Automation Procedures',
+    'remote access',
+    'remote admin connections',
+    'scan for startup procs',
+    'xp_cmdshell',
+    'default trace enabled',
+    'external scripts enabled'
+)
+ORDER BY name;
+```
+
+### CIS Section 3 — Authentication
+
+```sql
+-- 3.1: Windows Authentication mode
+SELECT
+    CASE SERVERPROPERTY('IsIntegratedSecurityOnly')
+        WHEN 1 THEN 'PASS - Windows Auth Only'
+        ELSE 'REVIEW - Mixed Mode'
+    END AS [CIS_3_1_AuthMode];
+
+-- 3.2: CHECK_POLICY ON for all SQL logins
+SELECT name,
+    CASE WHEN is_policy_checked = 1 THEN 'PASS' ELSE 'FAIL' END AS [CIS_3_2]
+FROM sys.sql_logins
+WHERE is_disabled = 0;
+
+-- 3.3: CHECK_EXPIRATION ON for all SQL logins
+SELECT name,
+    CASE WHEN is_expiration_checked = 1 THEN 'PASS' ELSE 'FAIL' END AS [CIS_3_3]
+FROM sys.sql_logins
+WHERE is_disabled = 0;
+
+-- 3.4: SA account disabled
+SELECT name,
+    CASE WHEN is_disabled = 1 THEN 'PASS' ELSE 'FAIL' END AS [CIS_3_4_SA_Disabled]
+FROM sys.server_principals
+WHERE sid = 0x01;
+
+-- 3.5: SA account renamed
+SELECT name,
+    CASE WHEN name != 'sa' THEN 'PASS' ELSE 'FAIL' END AS [CIS_3_5_SA_Renamed]
+FROM sys.server_principals
+WHERE sid = 0x01;
+```
+
+### CIS Section 4 — Authorization
+
+```sql
+-- 4.2: CONNECT permission revoked from guest on user databases
+EXEC sp_MSforeachdb '
+    IF ''?'' NOT IN (''master'', ''tempdb'', ''msdb'')
+    BEGIN
+        USE [?];
+        SELECT DB_NAME() AS [Database],
+            CASE WHEN EXISTS(
+                SELECT 1 FROM sys.database_permissions
+                WHERE grantee_principal_id = DATABASE_PRINCIPAL_ID(''guest'')
+                AND permission_name = ''CONNECT''
+                AND state_desc = ''GRANT''
+            ) THEN ''FAIL'' ELSE ''PASS'' END AS [CIS_4_2_GuestConnect];
+    END
+';
+
+-- 4.3: Orphaned users check
+EXEC sp_MSforeachdb '
+    IF ''?'' NOT IN (''master'', ''tempdb'', ''msdb'', ''model'')
+    BEGIN
+        USE [?];
+        SELECT DB_NAME() AS [Database], dp.name AS [OrphanedUser], ''FAIL'' AS [CIS_4_3]
+        FROM sys.database_principals dp
+        LEFT JOIN sys.server_principals sp ON dp.sid = sp.sid
+        WHERE dp.type IN (''S'',''U'')
+        AND sp.sid IS NULL
+        AND dp.name NOT IN (''dbo'',''guest'',''INFORMATION_SCHEMA'',''sys'')
+        AND dp.authentication_type != 0;
+    END
+';
+```
+
+### CIS Section 5 — Auditing
+
+```sql
+-- 5.1: Maximum number of error log files >= 12
+DECLARE @NumErrorLogs INT;
+EXEC master.sys.xp_instance_regread
+    N'HKEY_LOCAL_MACHINE',
+    N'Software\Microsoft\MSSQLServer\MSSQLServer',
+    N'NumErrorLogs',
+    @NumErrorLogs OUTPUT;
+SELECT
+    @NumErrorLogs AS [NumErrorLogs],
+    CASE WHEN @NumErrorLogs >= 12 THEN 'PASS' ELSE 'FAIL' END AS [CIS_5_1];
+
+-- 5.2: Default Trace Enabled
+SELECT
+    value_in_use,
+    CASE WHEN value_in_use = 1 THEN 'PASS' ELSE 'FAIL' END AS [CIS_5_2]
+FROM sys.configurations
+WHERE name = 'default trace enabled';
+
+-- 5.3: Login Auditing set to both failed and successful
+DECLARE @AuditLevel INT;
+EXEC master.sys.xp_instance_regread
+    N'HKEY_LOCAL_MACHINE',
+    N'Software\Microsoft\MSSQLServer\MSSQLServer',
+    N'AuditLevel',
+    @AuditLevel OUTPUT;
+SELECT
+    @AuditLevel AS [AuditLevel],
+    CASE WHEN @AuditLevel = 3 THEN 'PASS' ELSE 'FAIL' END AS [CIS_5_3];
+
+-- 5.4: SQL Server Audit configured
+SELECT
+    CASE WHEN EXISTS (
+        SELECT 1 FROM sys.server_audits WHERE is_state_enabled = 1
+    ) THEN 'PASS' ELSE 'FAIL' END AS [CIS_5_4_AuditExists];
+```
+
+---
+
+## SQL Server Agent Security
+
+```sql
+-- Agent jobs and their owners
+SELECT
+    j.name AS [JobName],
+    SUSER_SNAME(j.owner_sid) AS [JobOwner],
+    j.enabled,
+    j.date_created,
+    j.date_modified,
+    js.step_name,
+    js.subsystem,
+    js.command
+FROM msdb.dbo.sysjobs j
+INNER JOIN msdb.dbo.sysjobsteps js ON j.job_id = js.job_id
+ORDER BY j.name, js.step_id;
+
+-- Agent proxies
+SELECT
+    p.name AS [ProxyName],
+    c.name AS [CredentialName],
+    c.credential_identity,
+    s.subsystem_name
+FROM msdb.dbo.sysproxies p
+INNER JOIN sys.credentials c ON p.credential_id = c.credential_id
+INNER JOIN msdb.dbo.sysproxysubsystem ps ON p.proxy_id = ps.proxy_id
+INNER JOIN msdb.dbo.syssubsystems s ON ps.subsystem_id = s.subsystem_id
+ORDER BY p.name;
+```
+
+---
+
+## SQL Server Service Account Review
+
+```sql
+-- Service account information
+SELECT
+    servicename,
+    service_account,
+    startup_type_desc,
+    status_desc,
+    instant_file_initialization_enabled
+FROM sys.dm_server_services;
+```
+
+> **Recommendation:** Service accounts should be dedicated domain accounts or managed service accounts (MSAs/gMSAs), not LocalSystem, NetworkService, or domain admin accounts. Instant file initialization should be enabled for performance but understood as a minor data exposure risk.
+
+---
+
+## Findings Template
+
+Use this template for each finding:
+
+```
+### Finding: [Title]
+
+| Field | Detail |
+|---|---|
+| **Severity** | Critical / High / Medium / Low / Informational |
+| **CIS Reference** | CIS SQL Server 2022 Benchmark Section X.X |
+| **CVE** | CVE-XXXX-XXXXX (if applicable) |
+| **Affected Instance** | ServerName\InstanceName |
+| **Affected Database** | DatabaseName (if applicable) |
+| **Current State** | [Description of what was found] |
+| **Evidence** | [SQL query used and output] |
+| **Expected State** | [What the compliant configuration should be] |
+| **Risk** | [Business impact description] |
+| **Recommendation** | [Specific remediation steps] |
+| **Remediation SQL** | [SQL commands to fix, if applicable] |
+```
+
+### Example Finding
+
+```
+### Finding: xp_cmdshell Enabled
+
+| Field | Detail |
+|---|---|
+| **Severity** | Critical |
+| **CIS Reference** | CIS SQL Server 2022 Benchmark 2.11 |
+| **Affected Instance** | DBSRV01\PROD |
+| **Current State** | xp_cmdshell is enabled (value_in_use = 1) |
+| **Evidence** | `SELECT name, value_in_use FROM sys.configurations WHERE name = 'xp_cmdshell';` — returned value_in_use = 1 |
+| **Expected State** | xp_cmdshell should be disabled (value_in_use = 0) |
+| **Risk** | Allows authenticated users with appropriate permissions to execute arbitrary OS commands via SQL Server, leading to potential full system compromise |
+| **Recommendation** | Disable xp_cmdshell unless explicitly required by the application |
+| **Remediation SQL** | `EXEC sp_configure 'xp_cmdshell', 0; RECONFIGURE;` |
+```
+
+---
+
+## Post-Review Checklist
+
+- [ ] All instance configuration settings documented
+- [ ] Authentication mode and all logins reviewed
+- [ ] Password policy enforcement verified
+- [ ] SA account status checked (disabled + renamed)
+- [ ] All sysadmin and high-privilege role members listed
+- [ ] Guest access reviewed per database
+- [ ] Orphaned users identified
+- [ ] Server and database audit configurations documented
+- [ ] TDE status and certificate expiry checked
+- [ ] Connection encryption (TLS) verified
+- [ ] Linked servers and their credentials reviewed
+- [ ] Dangerous extended stored procedures permissions checked
+- [ ] SQL Agent jobs and proxies reviewed
+- [ ] Service accounts are least-privilege
+- [ ] Patch level verified against latest CU
+- [ ] Backup encryption status confirmed
+- [ ] CIS benchmark quick checks completed
+- [ ] All findings documented with evidence and remediation
+
+---
+
+## References
+
+- CIS Microsoft SQL Server 2022 Benchmark
+- Microsoft SQL Server 2022 Security Best Practices documentation
+- OWASP Database Security Cheat Sheet
+- NIST SP 800-123 Guide to General Server Security
+- DISA STIG for MS SQL Server 2022
+- Microsoft SQL Server 2022 Build List (for patch verification)
