@@ -1025,6 +1025,163 @@ WHERE o.type = 'P'
 ORDER BY o.name;
 ```
 
+### Safe SQL Injection Testing for Stored Procedures
+
+The query above identifies stored procedures that *may* be vulnerable, but a code review is needed to confirm. This is a manual check — below is a safe, structured approach for authorized testing.
+
+#### Step 1 — Read the procedure source code
+
+Before executing anything, review the procedure definition to understand what it does:
+
+```sql
+-- View the full definition of a flagged procedure
+EXEC sp_helptext 'dbo.YourProcedureName';
+
+-- Or use sys.sql_modules for the full text
+SELECT definition
+FROM sys.sql_modules
+WHERE object_id = OBJECT_ID('dbo.YourProcedureName');
+```
+
+#### Step 2 — Classify the risk by code pattern
+
+Review the source and classify the procedure against these patterns:
+
+| Code Pattern | Risk Level | What It Means |
+|---|---|---|
+| `sp_executesql @sql, N'@param INT', @param = @input` | **Low** — Parameterised dynamic SQL | Parameters are bound safely. The procedure uses dynamic SQL but inputs are not concatenated into the query string. This is the correct way to use dynamic SQL |
+| `SET @sql = 'SELECT * FROM ' + QUOTENAME(@tablename)` | **Low** — Properly quoted identifiers | `QUOTENAME()` escapes identifiers (table/column names). Safe for identifiers, though still worth documenting |
+| `SET @sql = 'SELECT * FROM users WHERE name = ''' + @input + ''''` | **High** — String concatenation without parameterisation | User input is concatenated directly into the SQL string. This is vulnerable to SQL injection |
+| `EXEC('SELECT * FROM ' + @input)` | **High** — Unparameterised EXEC with concatenation | Same risk — raw input is injected into executed SQL. No parameterisation or escaping |
+| `SET @sql = 'SELECT * FROM users WHERE id = ' + CAST(@id AS VARCHAR)` | **Medium** — Type-cast concatenation | The `CAST` to a numeric type provides *some* protection (can't inject strings), but the pattern is still unsafe and should use parameterised queries |
+
+> **Key rule:** If user-supplied input is concatenated into a SQL string without parameterisation (`sp_executesql` with parameter binding) or proper escaping (`QUOTENAME` for identifiers), it is likely vulnerable.
+
+#### Step 3 — Identify the procedure's parameters
+
+```sql
+-- List parameters and their types for the target procedure
+SELECT
+    p.name AS [Parameter],
+    t.name AS [DataType],
+    p.max_length,
+    p.is_output
+FROM sys.parameters p
+INNER JOIN sys.types t ON p.system_type_id = t.system_type_id AND p.user_type_id = t.user_type_id
+WHERE p.object_id = OBJECT_ID('dbo.YourProcedureName')
+ORDER BY p.parameter_id;
+```
+
+| Parameter Type | Testing Notes |
+|---|---|
+| `VARCHAR` / `NVARCHAR` | Primary injection target — string parameters that get concatenated into dynamic SQL |
+| `INT` / `BIGINT` / `DECIMAL` | Lower risk — SQL Server will reject non-numeric input at the parameter level, but test type-cast concatenation patterns |
+| `OUTPUT` parameters | Not directly injectable, but check if they leak data from injected queries |
+
+#### Step 4 — Safe test payloads (read-only, non-destructive)
+
+> **Important:** Only use these payloads during authorized testing. Always work in a test/dev environment when possible. These payloads are designed to detect injection without modifying data.
+
+**Principle:** Use payloads that cause observable differences (errors, timing, row count changes) without altering data.
+
+**4a. Error-based detection — does unescaped input cause a SQL error?**
+
+```sql
+-- Pass a single quote to trigger a syntax error
+-- If the procedure errors with "Unclosed quotation mark", it is concatenating input unsafely
+EXEC dbo.YourProcedureName @param = N'''';
+-- Expected if vulnerable: "Unclosed quotation mark after the character string"
+-- Expected if safe: Normal execution or application-level validation error
+```
+
+| Result | What It Means |
+|---|---|
+| `Unclosed quotation mark after the character string '''.` | **Vulnerable** — the single quote broke out of the SQL string. Input is concatenated without parameterisation |
+| `Incorrect syntax near ...` | **Likely vulnerable** — input is reaching the SQL parser unescaped |
+| Normal execution / empty result set | **Likely safe** — input is parameterised or validated. Proceed with further tests to confirm |
+| Application-level error (e.g., "Invalid input") | **Safe** — input validation is catching the payload before it reaches SQL |
+
+**4b. Tautology test — does always-true logic change results?**
+
+```sql
+-- Normal call (note the expected row count)
+EXEC dbo.YourProcedureName @param = N'test';
+
+-- Tautology injection (should return all rows if vulnerable)
+EXEC dbo.YourProcedureName @param = N'test'' OR ''1''=''1';
+```
+
+| Result | What It Means |
+|---|---|
+| Second call returns significantly more rows than the first | **Vulnerable** — the `OR '1'='1'` was interpreted as SQL, bypassing the WHERE clause |
+| Both calls return the same results | **Likely safe** — the injected logic was treated as a literal string value |
+
+**4c. Time-based detection — does a delay payload cause the procedure to hang?**
+
+```sql
+-- Inject a WAITFOR to see if execution is delayed
+-- Use a short delay (2 seconds) to minimise impact
+EXEC dbo.YourProcedureName @param = N'test''; WAITFOR DELAY ''0:0:2''--';
+```
+
+| Result | What It Means |
+|---|---|
+| Procedure takes ~2 seconds longer than normal | **Vulnerable** — the `WAITFOR` was executed as a separate statement, confirming injection |
+| Procedure returns at normal speed | **Likely safe** — the payload was not interpreted as SQL |
+
+**4d. UNION-based detection (read-only) — can you extract metadata?**
+
+```sql
+-- Attempt to append a UNION SELECT to extract version info
+-- This is read-only and exposes no sensitive data
+EXEC dbo.YourProcedureName @param = N'test'' UNION SELECT @@VERSION--';
+```
+
+| Result | What It Means |
+|---|---|
+| SQL Server version string appears in the output | **Vulnerable** — the UNION was executed and returned data from the injected query |
+| Column count mismatch error (`All queries ... must have an equal number of expressions`) | **Vulnerable** — the injection reached the parser. The error itself confirms the vulnerability even though the output failed |
+| Normal results, no version string | **Likely safe** — the payload was parameterised or escaped |
+
+#### Step 5 — Document findings
+
+For each vulnerable procedure, record:
+
+```
+| Field | Detail |
+|---|---|
+| **Procedure** | [Schema].[ProcedureName] |
+| **Vulnerable Parameter** | @param_name (NVARCHAR) |
+| **Pattern** | String concatenation into EXEC / sp_executesql without parameter binding |
+| **Evidence** | Error-based: single quote produced "Unclosed quotation mark" error |
+| **Risk** | Authenticated users calling this procedure can execute arbitrary SQL with the procedure's security context |
+| **Remediation** | Refactor to use `sp_executesql` with parameter binding, or use `QUOTENAME()` for identifier inputs |
+```
+
+#### Remediation Reference
+
+For each vulnerable pattern found, recommend the safe equivalent:
+
+```sql
+-- VULNERABLE: String concatenation
+SET @sql = N'SELECT * FROM users WHERE name = ''' + @input + '''';
+EXEC(@sql);
+
+-- SAFE: Parameterised sp_executesql
+SET @sql = N'SELECT * FROM users WHERE name = @name';
+EXEC sp_executesql @sql, N'@name NVARCHAR(100)', @name = @input;
+```
+
+```sql
+-- VULNERABLE: Dynamic table name via concatenation
+SET @sql = N'SELECT * FROM ' + @tablename;
+EXEC(@sql);
+
+-- SAFE: QUOTENAME for identifiers
+SET @sql = N'SELECT * FROM ' + QUOTENAME(@tablename);
+EXEC sp_executesql @sql;
+```
+
 ### Procedures with EXECUTE AS
 
 ```sql
